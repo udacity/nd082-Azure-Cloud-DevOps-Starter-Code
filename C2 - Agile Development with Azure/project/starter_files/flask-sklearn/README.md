@@ -22,7 +22,7 @@
 
 * Successful prediction from deployed flask app in Azure Cloud Shell> 
 
-## Description
+## Enhancements
 
 <TODO: A short description of how to improve the project in the future>
 
