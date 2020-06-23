@@ -1,26 +1,22 @@
-## Install
-
-* Create a virtualenv and source
-* run `make install`
-
-### Running app
-
-#### Three modes:
-
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
-
-### Kubernetes 
-
-#### Local Deploy and Testing
+## 
 
 
-#### AWS Deploy Options
+## A screenshot showing the project running inside a Docker container
 
-1. EKS
-2. Fargate (TBD...not ready yet)
+##  A screenshot showing the container is checked into the Azure Container Registry
 
-### Reference
+## A screenshot showing the project running on Azure App Service
 
-* https://aws.amazon.com/eks/faqs/
+## Screenshot showing the project cloned into Azure Cloud Shell.
+
+## Screenshot showing the passing tests that are displayed after running the `make all` command from the `Makefile`.
+
+## A screenshot showing the output of a test run.
+
+## A screenshot of a successful run of the project in Azure Pipelines
+
+## A screenshot of Azure Azure App Service
+
+## A screenshot of a successful prediction in Azure Cloud Shell 
+
+## Link to Screencast on YouTube
