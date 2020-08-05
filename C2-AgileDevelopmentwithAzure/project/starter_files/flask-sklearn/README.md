@@ -26,7 +26,7 @@
 
 * Output of a test run
 
-* Successful run of the project in Azure Pipelines
+* Successful deploy of the project in Azure Pipelines
 
 * Running Azure App Service
 
