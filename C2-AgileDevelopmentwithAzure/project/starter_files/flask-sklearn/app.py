@@ -54,6 +54,11 @@ def predict():
 
     """
 
+    try:
+        clf = joblib.load("boston_housing_prediction.joblib")
+    except:
+        LOG.info("JSON payload: %s json_payload")
+        return "Model not loaded"
 
     json_payload = request.json
     LOG.info("JSON payload: %s json_payload")
@@ -64,5 +69,4 @@ def predict():
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
-    clf = joblib.load("boston_housing_prediction.joblib")
     app.run(host='0.0.0.0', port=5000, debug=True)
