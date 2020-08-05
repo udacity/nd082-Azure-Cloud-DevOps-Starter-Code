@@ -39,6 +39,8 @@ Port: 443
 {"prediction":[20.35373177134412]}
 ```
 
+* Output of streamed log files from deployed application
+
 > 
 
 ## Enhancements
