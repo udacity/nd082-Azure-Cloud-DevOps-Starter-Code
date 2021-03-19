@@ -1,2 +1,6 @@
 .DS_Store
 .DS_Store?
+.pem
+/.pem
+/pem
+UdacityDevOps_key.pem
