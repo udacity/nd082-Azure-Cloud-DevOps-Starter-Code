@@ -1,7 +1,7 @@
-def add(x,y):
-    return x+y
+def square(x):
+    return x * x
 
-def test_add():
-    total = add(1,4)
-    assert total == 3
+def test_square():
+    result = square(2)
+    test result == 4
     
