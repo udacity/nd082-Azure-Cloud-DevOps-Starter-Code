@@ -17,7 +17,9 @@ For this project, you will write a Packer template and a Terraform template to d
 4. Install [Terraform](https://www.terraform.io/downloads.html)
 
 ### Instructions
-**Your words here**
+1. Run bash script create_policy_definition.sh to create policy
+2. Run bash script assign_policy.sh to assign policy
+3. Run bash script 'az policy assignment list' to verify
 
 ### Output
 **Your words here**
