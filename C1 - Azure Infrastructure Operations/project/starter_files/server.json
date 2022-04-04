@@ -13,6 +13,6 @@
 			"nohup busybox httpd -f -p 80 &"
 		],
 		"inline_shebang": "/bin/sh -x",
-		"type: "shell"
+		"type": "shell"
 	}]
 }
