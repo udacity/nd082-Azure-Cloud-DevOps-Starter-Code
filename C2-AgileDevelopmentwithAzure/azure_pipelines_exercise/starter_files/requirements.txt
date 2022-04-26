@@ -1,3 +1,9 @@
-Flask==1.0.2
-pandas==0.24.2
-scikit-learn==0.20.3
+Flask==2.1.1
+pandas==1.3.5
+scikit-learn==1.0.2
+importlib-metadata==4.11.3
+virtualenv==20.14.1
+argcomplete==2.0.0
+joblib==1.1.0
+pylint==2.13.7
+pytest==7.1.2
