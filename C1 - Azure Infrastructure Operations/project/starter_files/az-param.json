@@ -1,0 +1,9 @@
+{
+    "author": {
+        "type": "String",
+        "metadata": {
+          "displayName": "author",
+          "description": "Author of this resources"
+        }
+    }
+}

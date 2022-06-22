@@ -1,0 +1,32 @@
+{
+    "properties": {
+      "displayName": "Require a tag on resources",
+      "mode": "All",
+      "description": "Deny the creation of resources that do not have tags.",
+      "metadata": {
+        "version": "1.0.1",
+        "category": "Tags"
+      },
+      "parameters": {
+        "author": {
+          "type": "String",
+          "metadata": {
+            "displayName": "author",
+            "description": "Author of this resources"
+          }
+        }
+      },
+      "policyRule": {
+        "if": {
+          "field": "[concat('tags[', parameters('author'), ']')]",
+          "exists": "false"
+        },
+        "then": {
+          "effect": "deny"
+        }
+      }
+    },
+    "id": "/providers/Microsoft.Authorization/policyDefinitions",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "tagging-policy"
+  }
