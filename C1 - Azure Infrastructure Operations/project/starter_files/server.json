@@ -5,7 +5,25 @@
 		"subscription_id": "{{env `ARM_SUBSCRIPTION_ID`}}"
 	},
 	"builders": [{
-		**YOUR CODE HERE**
+		"type": "azure-arm",
+
+		"client_id": "{{user `client_id`}}",
+		"client_secret": "{{user `client_secret`}}",
+		"subscription_id": "{{user `subscription_id`}}",
+
+		"os_type": "Linux",
+		"image_publisher": "Canonical",
+		"image_offer": "UbuntuServer",
+		"image_sku": "18.04-LTS",
+
+		"managed_image_resource_group_name": "packer-rg",
+		"managed_image_name": "myPackerImage",
+		"azure_tags": {
+			"rg": "packer-rg",
+			"name": "myPackerImage"
+		},
+		"location": "East US",
+		"vm_size": "Standard_D2s_v3"
 	}],
 	"provisioners": [{
 		"inline": [
