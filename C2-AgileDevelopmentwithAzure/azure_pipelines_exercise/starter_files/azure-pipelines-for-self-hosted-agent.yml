@@ -33,10 +33,30 @@ stages:
         python3.7 -m pip install setup
         python3.7 -m pip install -r requirements.txt
       workingDirectory: $(projectRoot)
-      displayName: 'myStep 1 - Pip install'
+      displayName: 'myStep 1'
 
     - script: |
         export PATH=$HOME/.local/bin:$PATH
         make install
       workingDirectory: $(projectRoot)
-      displayName: 'myStep 2 - Make'
+      displayName: 'myStep 2'
+
+    - script: |
+        export PATH=$HOME/.local/bin:$PATH
+        make install
+        make lint
+      workingDirectory: $(projectRoot)
+      displayName:  'myStep 3 - Run lint tests'
+
+    - task: ArchiveFiles@2
+      displayName: 'myStep 4 - Archive files'
+      inputs:
+        rootFolderOrFile: '$(projectRoot)'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        replaceExistingArchive: true
+
+    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      displayName: 'myStep 5 - Upload package'
+      artifact: drop
