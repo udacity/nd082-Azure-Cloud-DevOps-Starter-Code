@@ -23,7 +23,7 @@ For this project, you will write a Packer template and a Terraform template to d
 **Your words here**
 
 1. az policy definition create --name tagging-policy --rules az-rules.json --params az-param.json
-2. az policy assignment create --policy tagging-policy -p '{ \"author\": { \"value\": \"hiepdang\" }}' --name tagging-policy --display-name tagging-policy -e Default
+2. az policy assignment create --policy tagging-policy -p '{\"author\": {\"value\": \"hiepdang\"}}' --name tagging-policy --display-name tagging-policy -e Default
 3. az policy assignment list
 
 4. az account show --query "{ subscription_id: id }"
