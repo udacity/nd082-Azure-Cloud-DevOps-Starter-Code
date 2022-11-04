@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "udacity" {
   tags = var.tags
 }
 
-resource "azurerm_virtual_network" "udacityVirNet" {
+resource "azurerm_virtual_network" "udacityVirtualNet" {
   name                = "${var.prefix}-network"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.udacity.location
@@ -19,8 +19,8 @@ resource "azurerm_virtual_network" "udacityVirNet" {
 resource "azurerm_subnet" "udacitySubNet" {
   name                 = "${var.prefix}-subnet"
   resource_group_name  = azurerm_resource_group.udacity.name
-  virtual_network_name = azurerm_virtual_network.udacityVirNet.name
-  address_prefixes     = ["10.0.2.0/24"]
+  virtual_network_name = azurerm_virtual_network.udacityVirtualNet.name
+  address_prefixes     = ["10.0.3.0/24"]
 }
 
 resource "azurerm_network_security_group" "udacitySg" {
@@ -132,7 +132,6 @@ resource "azurerm_lb" "udacityLb" {
 
 resource "azurerm_lb_backend_address_pool" "udacitylbPool" {
   count               = length(azurerm_lb.udacityLb)
-  resource_group_name = azurerm_resource_group.udacity.name
   loadbalancer_id     = azurerm_lb.udacityLb[count.index].id
   name                = "${var.prefix}-lbpool-${count.index}"
 }
