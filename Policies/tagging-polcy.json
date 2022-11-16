@@ -1,0 +1,18 @@
+
+{
+    "if": {
+        "allof":[
+            {
+                "field": "tags",
+                "exists": "false"
+            },
+            {
+                "field": "type",
+                "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+            }
+        ]
+    },
+    "then": {
+        "effect": "audit"
+    }
+}
