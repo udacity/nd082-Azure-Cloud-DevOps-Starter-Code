@@ -1,0 +1,35 @@
+{
+	"variables": {
+		"client_id": "1934eb35-4d92-4c3b-9f21-e2af2e5a348c",
+		"client_secret": "xyk8Q~RbXJ6ZN4MeoaMYPgXhe~dR3gV2E5YQOcWB",
+		"tenant_id": "bc1ef35a-652b-4622-8878-d386796f2f96",
+		"subscription_id": "89885a6e-f67f-464f-858c-fc4742ef2382"
+	},
+	"builders": [
+		{
+			"type": "azure-arm",
+			"client_id": "1934eb35-4d92-4c3b-9f21-e2af2e5a348c",
+			"client_secret": "xyk8Q~RbXJ6ZN4MeoaMYPgXhe~dR3gV2E5YQOcWB",
+			"tenant_id": "bc1ef35a-652b-4622-8878-d386796f2f96",
+			"subscription_id": "89885a6e-f67f-464f-858c-fc4742ef2382",
+			"os_type": "Linux",
+			"image_publisher": "Canonical",
+			"image_offer": "UbuntuServer",
+			"image_sku": "18.04-LTS",
+			"managed_image_resource_group_name": "udacity-packer",
+			"managed_image_name": "udacity-img-vm",
+			"location": "Sweden Central",
+			"vm_size": "Standard_B1ms"
+		}
+	],
+	"provisioners": [
+		{
+			"inline": [
+				"echo 'Hello, World!' > index.html",
+				"nohup busybox httpd -f -p 80 &"
+			],
+			"inline_shebang": "/bin/sh -x",
+			"type": "shell"
+		}
+	]
+}
