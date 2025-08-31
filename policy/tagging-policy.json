@@ -1,0 +1,12 @@
+﻿{
+  "properties": {
+    "displayName": "Require resource tags",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Deny creation of resources without tags",
+    "policyRule": {
+      "if": { "field": "tags", "exists": "false" },
+      "then": { "effect": "deny" }
+    }
+  }
+}
